@@ -1,19 +1,19 @@
-def bsearch(scope, goal):
-    scope.sort()
-    start, end = 0, len(scope) - 1
+def bsearch(arr, target):
+    arr.sort()
+    left, right = 0, len(arr) - 1
 
-    while (start != end):
-        middle = int((start + end) / 2)
-        if scope[middle] == goal:
-            return middle
-        elif scope[middle] > goal:
-            end = middle
+    while (left <= right):
+        mid = int((left + right) / 2)
+        if arr[mid] == target:
+            return mid
+        elif arr[mid] > target:
+            right = mid - 1
         else:
-            start = middle + 1
+            left = mid + 1
 
-    return start if scope[start] == goal else None
+    return -1
 
 if __name__ == '__main__':
-    foo = [7,6,44,1,4,7,99,0,12,43]
-    goal = 7
-    print(bsearch(foo, goal))
+    arr = [1,2,3,4,5,6]
+    target = 4
+    print(bsearch(arr, target))
