@@ -8,6 +8,6 @@ def func(arr, k):
     return maxSum
 
 if __name__ == '__main__':
-    arr = [1,2,3,4,5,6]
-    k = 3
+    arr = [80,-50,90,100]
+    k = 2
     print(func(arr, k))
